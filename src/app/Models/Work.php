@@ -5,17 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class Work extends Model
 {
     use HasFactory;
-    protected $fillable=['name','email','password'];
+    protected $fillable=['user_id','date','start_time','finish_time'];
 
-    public function works(){
-        return $this->hasMany(Work::class);
+    public function rests(){
+        return $this->hasMany(Rest::class);
     }
 
     public function applications(){
         return $this->hasMany(Application::class);
     }
 
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }
