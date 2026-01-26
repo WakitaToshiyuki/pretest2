@@ -1,0 +1,12 @@
+.header{
+    width: 1512px;
+    height: 80px;
+    background-color: black;
+}
+
+.title{
+    color: white;
+    padding: auto 0px;
+    margin: 0px auto;
+}
+
