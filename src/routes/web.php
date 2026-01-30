@@ -19,12 +19,16 @@ use App\Http\Controllers\WorkController;
 
 Route::get('/', [UserController::class, 'index']);
 
+//仮組↓
+//一般ユーザー
 Route::get('/attendance', [UserController::class, '']);
 Route::get('/attendance/list', [UserController::class, '']);
 Route::get('/attendance/detail/{id}', [UserController::class, '']);
-Route::get('/admin/attendance/list', [UserController::class, '']);
-Route::get('/admin/attendance/{id}', [UserController::class, '']);
-Route::get('/admin/staff/list', [UserController::class, '']);
-Route::get('/admin/attendance/staff/{id}', [UserController::class, '']);
-Route::get('/stamp_correction_request/approve/{attendance_correct_request_id}', [UserController::class, '']);
+//管理者
+Route::get('/admin/attendance/list', [ManagerController::class, 'index']);
+Route::get('/admin/attendance/{id}', [ManagerController::class, '']);
+Route::get('/admin/staff/list', [ManagerController::class, '']);
+Route::get('/admin/attendance/staff/{id}', [ManagerController::class, '']);
+Route::get('/stamp_correction_request/approve/{attendance_correct_request_id}', [ManagerController::class, '']);
+//一般ユーザーと管理者
 Route::get('/stamp_correction_request/list', [UserController::class, '']);
