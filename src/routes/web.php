@@ -19,3 +19,12 @@ use App\Http\Controllers\WorkController;
 
 Route::get('/', [UserController::class, 'index']);
 
+Route::get('/attendance', [UserController::class, '']);
+Route::get('/attendance/list', [UserController::class, '']);
+Route::get('/attendance/detail/{id}', [UserController::class, '']);
+Route::get('/admin/attendance/list', [UserController::class, '']);
+Route::get('/admin/attendance/{id}', [UserController::class, '']);
+Route::get('/admin/staff/list', [UserController::class, '']);
+Route::get('/admin/attendance/staff/{id}', [UserController::class, '']);
+Route::get('/stamp_correction_request/approve/{attendance_correct_request_id}', [UserController::class, '']);
+Route::get('/stamp_correction_request/list', [UserController::class, '']);
